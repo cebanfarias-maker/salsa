@@ -7,52 +7,207 @@
   <title>Salsa e Alecrim - Marmitas Fitness</title>
   <link rel="stylesheet" href="estilo.css" />
   <style>
-    /* Adicione estilos básicos para visualização */
-    .produto { border: 1px solid #ccc; padding: 16px; margin: 8px; border-radius: 6px; }
-    .categoria { margin-top: 32px; }
-    #carrinho { position: fixed; top: 10px; right: 10px; background: #fff; border: 2px solid #ccc; padding: 16px; border-radius: 8px; min-width: 250px; z-index: 1000; }
+    /* MENU FIXO */
+    .menu-topo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1.5px solid #e0e0e0;
+      z-index: 1001;
+      box-shadow: 0 2px 12px #0001;
+      transition: background 0.3s;
+    }
+    .menu-topo ul {
+      margin: 0;
+      padding: 0 32px;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      height: 54px;
+      align-items: center;
+    }
+    .menu-topo a {
+      text-decoration: none;
+      color: #1a7f37;
+      font-weight: bold;
+      font-size: 1.13em;
+      padding: 7px 16px;
+      border-radius: 5px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .menu-topo a:hover, .menu-topo a:focus {
+      background: #1a7f37;
+      color: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8f8f5;
+      padding-top: 64px;
+      margin: 0;
+    }
+
+    /* Banner visual */
+    .banner-topo {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .banner-topo img {
+      max-width: 100%;
+      width: 360px;
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px #0002;
+      margin: 0 auto;
+      background: #fff;
+      padding: 10px 0;
+    }
+
+    /* Títulos */
+    h1 {
+      text-align: center;
+      color: #1a7f37;
+      margin: 18px 0 0 0;
+      font-size: 2.5em;
+      letter-spacing: 0.03em;
+    }
+    h2 {
+      color: #e67300;
+      margin-top: 38px;
+      text-align: center;
+      font-size: 2em;
+    }
+    h3 {
+      color: #1a7f37;
+      margin-top: 30px;
+    }
+
+    /* Cards de produto */
+    .categoria {
+      margin: 32px auto 12px auto;
+      max-width: 900px;
+    }
+    .produtos-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .produto {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px #0001;
+      flex: 1 1 290px;
+      min-width: 260px;
+      max-width: 330px;
+      padding: 20px 18px 16px 18px;
+      margin-bottom: 12px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto:hover {
+      transform: translateY(-4px) scale(1.025);
+      box-shadow: 0 6px 28px #1a7f3720;
+      border-color: #e0e0e0;
+    }
+    .produto button.botao {
+      margin-top: 18px;
+    }
+
+    /* Carrinho */
+    #carrinho {
+      position: fixed;
+      top: 74px;
+      right: 18px;
+      background: #fff;
+      border: 2px solid #1a7f37;
+      padding: 18px 16px;
+      border-radius: 12px;
+      min-width: 270px;
+      z-index: 1002;
+      box-shadow: 0 2px 16px #1a7f3720;
+    }
     #carrinho h3 { margin-top: 0; }
-    #carrinho-lista { max-height: 180px; overflow-y: auto; }
-    .carrinho-item { font-size: 0.95em; margin-bottom: 6px; }
-    .remover { color: red; cursor: pointer; margin-left: 8px; }
-    .botao { background: #1a7f37; color: #fff; border: none; padding: 7px 16px; border-radius: 4px; cursor: pointer; }
-    .botao:active {background: #145c27;}
+    #carrinho-lista { max-height: 180px; overflow-y: auto; margin-bottom: 7px;}
+    .carrinho-item { font-size: 1em; margin-bottom: 7px; }
+    .remover { color: #e67300; cursor: pointer; margin-left: 9px; font-weight: bold;}
+    .remover:hover { color: #d41e1e; }
+    .botao {
+      background: linear-gradient(90deg,#1a7f37 60%, #e67300 100%);
+      color: #fff;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      box-shadow: 0 1px 6px #0002;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .botao:hover { background:#e67300; transform: scale(1.07);}
+    .botao:active {background: #1a7f37;}
+    #msg-finaliza {
+      color: green;
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+    @media (max-width:950px) {
+      .produtos-lista { flex-direction: column; align-items: center;}
+      #carrinho { position: static; min-width: 95vw; box-shadow: none; top: unset; right: unset; }
+    }
     @media (max-width:600px) {
-      #carrinho {position:static; width: 100%; margin-bottom: 20px;}
+      .categoria { max-width: 100vw;}
+      .produto { min-width: 90vw; max-width: 98vw;}
+      .menu-topo ul { gap: 20px; padding: 0 5px;}
+      .banner-topo img { width: 93vw;}
+      #carrinho { min-width: 98vw;}
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 48px;
+      padding: 24px 0 12px 0;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(90deg,#1a7f37 60%, #e67300 100%);
+      font-size: 1.1em;
+      letter-spacing: 0.01em;
+      border-radius: 10px 10px 0 0;
     }
   </style>
 </head>
 <body>
-<nav class="menu-topo">
-  <ul>
-    <li><a href="#cardapio">Cardápio</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-</nav>
+  <!-- MENU FIXO NO TOPO -->
+  <nav class="menu-topo">
+    <ul>
+      <li><a href="#marmitas">Cardápio</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
   <!-- Carrinho -->
   <div id="carrinho">
     <h3>Carrinho</h3>
     <div id="carrinho-lista"></div>
     <p><strong>Total: R$ <span id="carrinho-total">0,00</span></strong></p>
     <button class="botao" onclick="finalizarPedido()">Finalizar Pedido</button>
-    <div id="msg-finaliza" style="color:green; display:none; margin-top:10px;">Pedido enviado! Entraremos em contato pelo WhatsApp.</div>
+    <div id="msg-finaliza">Pedido enviado! Entraremos em contato pelo WhatsApp.</div>
   </div>
 
-  <!-- MENU -->
   <header>
-    <!-- Banner visual no topo -->
-<div class="banner-topo">
-  <img src="logo2.png" alt="Banner de Marmitas Fitness" style="width:100%; max-height:350px; object-fit:cover;">
-</div>
+    <!-- Banner visual -->
+    <div class="banner-topo">
+      <img src="logo2.png" alt="Banner de Marmitas Fitness">
+    </div>
     <h1>Salsa e Alecrim</h1>
-    <nav class="menu-topo">
-      <ul>
-        <li><a href="#marmitas">Cardápio</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- Produtos -->
@@ -61,77 +216,83 @@
 
     <div class="categoria">
       <h3>Opções com Frango <span style="font-weight:normal;">(R$ 15,99)</span></h3>
-      <div class="produto">
-        Frango desfiado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis).
-        <button class="botao" onclick="addCarrinho('Frango desfiado + Purê Mandioquinha + Mix Legumes', 15.99)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Filé de frango + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias)
-        <button class="botao" onclick="addCarrinho('Filé de frango + Arroz Integral + Mix de Legumes', 15.99)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Frango em Cubos + Abóbora Japonesa + Mix de Legumes no vapor (Vagem + Cenoura + Abobrinha Italiana)
-        <button class="botao" onclick="addCarrinho('Frango em Cubos + Abóbora Japonesa + Mix de Legumes', 15.99)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Sobrecoxa assada + Batata doce assada + Abobrinha refogada
-        <button class="botao" onclick="addCarrinho('Sobrecoxa assada + Batata doce assada + Abobrinha', 15.99)">Adicionar</button>
+      <div class="produtos-lista">
+        <div class="produto">
+          Frango desfiado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis).
+          <button class="botao" onclick="addCarrinho('Frango desfiado + Purê Mandioquinha + Mix Legumes', 15.99)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Filé de frango + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias)
+          <button class="botao" onclick="addCarrinho('Filé de frango + Arroz Integral + Mix de Legumes', 15.99)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Frango em Cubos + Abóbora Japonesa + Mix de Legumes no vapor (Vagem + Cenoura + Abobrinha Italiana)
+          <button class="botao" onclick="addCarrinho('Frango em Cubos + Abóbora Japonesa + Mix de Legumes', 15.99)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Sobrecoxa assada + Batata doce assada + Abobrinha refogada
+          <button class="botao" onclick="addCarrinho('Sobrecoxa assada + Batata doce assada + Abobrinha', 15.99)">Adicionar</button>
+        </div>
       </div>
     </div>
 
     <div class="categoria">
       <h3>Opções com Carne <span style="font-weight:normal;">(R$ 18,99)</span></h3>
-      <div class="produto">
-        Bife de patinho + Purê Mandioquinha + Mix Legumes no vapor (couve flor + brócolis).
-        <button class="botao" onclick="addCarrinho('Bife de patinho + Purê Mandioquinha + Mix Legumes', 18.99)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Patinho Moído + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias)
-        <button class="botao" onclick="addCarrinho('Patinho Moído + Arroz Integral + Mix de Legumes', 18.99)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Almôndega Assada + Abóbora Japonesa no vapor + Mix de Legumes (Cenoura + Abobrinha Italiana)
-        <button class="botao" onclick="addCarrinho('Almôndega Assada + Abóbora Japonesa + Mix de Legumes', 18.99)">Adicionar</button>
+      <div class="produtos-lista">
+        <div class="produto">
+          Bife de patinho + Purê Mandioquinha + Mix Legumes no vapor (couve flor + brócolis).
+          <button class="botao" onclick="addCarrinho('Bife de patinho + Purê Mandioquinha + Mix Legumes', 18.99)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Patinho Moído + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias)
+          <button class="botao" onclick="addCarrinho('Patinho Moído + Arroz Integral + Mix de Legumes', 18.99)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Almôndega Assada + Abóbora Japonesa no vapor + Mix de Legumes (Cenoura + Abobrinha Italiana)
+          <button class="botao" onclick="addCarrinho('Almôndega Assada + Abóbora Japonesa + Mix de Legumes', 18.99)">Adicionar</button>
+        </div>
       </div>
     </div>
 
     <div class="categoria">
       <h3>Especiais <span style="font-weight:normal;">(a partir de R$ 18,99)</span></h3>
-      <div class="produto">
-        Filé de Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis). <strong>R$ 24,90</strong>
-        <button class="botao" onclick="addCarrinho('Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes', 24.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Filé de Tilápia ao molho de maracujá + Arroz Integral + Brócolis. <strong>R$ 24,90</strong>
-        <button class="botao" onclick="addCarrinho('Tilápia ao molho de maracujá + Arroz Integral + Brócolis', 24.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Escondidinho de Frango feito com Suflê de Abóbora. <strong>R$ 18,99</strong>
-        <button class="botao" onclick="addCarrinho('Escondidinho de Frango com Suflê de Abóbora', 18.99)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Panqueca Integral recheio Frango desfiado com ricota. <strong>R$ 19,90</strong>
-        <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com ricota', 19.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Panqueca Integral recheio de Escarola com Ricota <strong>R$ 19,90</strong>
-        <button class="botao" onclick="addCarrinho('Panqueca Integral de Escarola com Ricota', 19.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Panqueca Integral recheio Frango desfiado com requeijão light. <strong>R$ 19,90</strong>
-        <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com requeijão light', 19.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Berinjela Assada com molho bolonhesa + queijo light e orégano (Acompanha arroz Integral e Brócolis). <strong>R$ 24,90</strong>
-        <button class="botao" onclick="addCarrinho('Berinjela Assada à bolonhesa + arroz Integral e Brócolis', 24.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Polpetone de patinho assado recheado com queijo light ao molho sugo (Acompanha Arroz + Legumes) <strong>R$ 24,90</strong>
-        <button class="botao" onclick="addCarrinho('Polpetone de patinho + Arroz + Legumes', 24.90)">Adicionar</button>
-      </div>
-      <div class="produto">
-        Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes (Brócolis e Berinjela refogada). <strong>R$ 24,90</strong>
-        <button class="botao" onclick="addCarrinho('Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes', 24.90)">Adicionar</button>
+      <div class="produtos-lista">
+        <div class="produto">
+          Filé de Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis). <strong>R$ 24,90</strong>
+          <button class="botao" onclick="addCarrinho('Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes', 24.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Filé de Tilápia ao molho de maracujá + Arroz Integral + Brócolis. <strong>R$ 24,90</strong>
+          <button class="botao" onclick="addCarrinho('Tilápia ao molho de maracujá + Arroz Integral + Brócolis', 24.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Escondidinho de Frango feito com Suflê de Abóbora. <strong>R$ 18,99</strong>
+          <button class="botao" onclick="addCarrinho('Escondidinho de Frango com Suflê de Abóbora', 18.99)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Panqueca Integral recheio Frango desfiado com ricota. <strong>R$ 19,90</strong>
+          <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com ricota', 19.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Panqueca Integral recheio de Escarola com Ricota <strong>R$ 19,90</strong>
+          <button class="botao" onclick="addCarrinho('Panqueca Integral de Escarola com Ricota', 19.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Panqueca Integral recheio Frango desfiado com requeijão light. <strong>R$ 19,90</strong>
+          <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com requeijão light', 19.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Berinjela Assada com molho bolonhesa + queijo light e orégano (Acompanha arroz Integral e Brócolis). <strong>R$ 24,90</strong>
+          <button class="botao" onclick="addCarrinho('Berinjela Assada à bolonhesa + arroz Integral e Brócolis', 24.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Polpetone de patinho assado recheado com queijo light ao molho sugo (Acompanha Arroz + Legumes) <strong>R$ 24,90</strong>
+          <button class="botao" onclick="addCarrinho('Polpetone de patinho + Arroz + Legumes', 24.90)">Adicionar</button>
+        </div>
+        <div class="produto">
+          Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes (Brócolis e Berinjela refogada). <strong>R$ 24,90</strong>
+          <button class="botao" onclick="addCarrinho('Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes', 24.90)">Adicionar</button>
+        </div>
       </div>
     </div>
   </section>
@@ -139,13 +300,20 @@
   <!-- Sobre a empresa -->
   <section id="sobre">
     <h2>Sobre a Salsa e Alecrim</h2>
-    <p>Somos apaixonados por alimentação saudável. Entregamos marmitas fitness feitas com ingredientes frescos e temperos naturais. Nosso foco é sabor, praticidade e saúde!</p>
+    <p style="max-width:700px;margin:auto;text-align:center;font-size:1.06em;">
+      Somos apaixonados por alimentação saudável. Entregamos marmitas fitness feitas com ingredientes frescos e temperos naturais.<br>
+      Nosso foco é sabor, praticidade e saúde!<br>
+      <span style="color:#1a7f37;font-weight:bold;">Prove e sinta a diferença no seu dia a dia.</span>
+    </p>
   </section>
 
   <!-- Contato -->
   <section id="contato">
     <h2>Faça seu pedido</h2>
-    <p>Pedidos e dúvidas: <a href="https://wa.me/5511962761191" target="_blank">11-96276-1191 (WhatsApp)</a></p>
+    <p style="text-align:center;font-size:1.06em;">
+      Pedidos e dúvidas: 
+      <a href="https://wa.me/5511962761191" target="_blank" class="botao" style="display:inline-block;margin:10px 0;">WhatsApp 11-96276-1191</a>
+    </p>
   </section>
 
   <!-- Rodapé -->
