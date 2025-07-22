@@ -212,90 +212,155 @@
 
   <!-- Produtos -->
   <section id="marmitas">
-    <h2>Cardápio</h2>
+  <h2 style="font-size:2.2em;">Cardápio</h2>
 
-    <div class="categoria">
-      <h3>Opções com Frango <span style="font-weight:normal;">(R$ 15,99)</span></h3>
-      <div class="produtos-lista">
-        <div class="produto">
-          Frango desfiado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis).
-          <button class="botao" onclick="addCarrinho('Frango desfiado + Purê Mandioquinha + Mix Legumes', 15.99)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Filé de frango + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias)
-          <button class="botao" onclick="addCarrinho('Filé de frango + Arroz Integral + Mix de Legumes', 15.99)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Frango em Cubos + Abóbora Japonesa + Mix de Legumes no vapor (Vagem + Cenoura + Abobrinha Italiana)
-          <button class="botao" onclick="addCarrinho('Frango em Cubos + Abóbora Japonesa + Mix de Legumes', 15.99)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Sobrecoxa assada + Batata doce assada + Abobrinha refogada
-          <button class="botao" onclick="addCarrinho('Sobrecoxa assada + Batata doce assada + Abobrinha', 15.99)">Adicionar</button>
-        </div>
+  <!-- Opções com Frango -->
+  <div class="categoria">
+    <h3 style="font-size:1.5em;">Opções com Frango <span style="font-weight:normal;font-size:0.7em;">(a partir de R$ 15,99)</span></h3>
+    <div class="produtos-lista">
+      <!-- ITENS ANTIGOS -->
+      <div class="produto">
+        Frango desfiado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis). <br><strong>R$ 15,99</strong>
+        <button class="botao" onclick="addCarrinho('Frango desfiado + Purê Mandioquinha + Mix Legumes', 15.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Filé de frango + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias) <br><strong>R$ 15,99</strong>
+        <button class="botao" onclick="addCarrinho('Filé de frango + Arroz Integral + Mix de Legumes', 15.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Frango em Cubos + Abóbora Japonesa + Mix de Legumes no vapor (Vagem + Cenoura + Abobrinha Italiana) <br><strong>R$ 15,99</strong>
+        <button class="botao" onclick="addCarrinho('Frango em Cubos + Abóbora Japonesa + Mix de Legumes', 15.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Sobrecoxa assada + Batata doce assada + Abobrinha refogada <br><strong>R$ 15,99</strong>
+        <button class="botao" onclick="addCarrinho('Sobrecoxa assada + Batata doce assada + Abobrinha', 15.99)">Adicionar</button>
+      </div>
+      <!-- ITENS NOVOS -->
+      <div class="produto">
+        SOBRECOXA ASSADA + PURÊ DE BATATA DOCE + CENOURA <br><strong>R$ 15,99</strong>
+        <button class="botao" onclick="addCarrinho('SOBRECOXA ASSADA + PURÊ DE BATATA DOCE + CENOURA', 15.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        STROGONOFF DE FRANGO + BATATA RÚSTICA ASSADA + ARROZ <br><strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('STROGONOFF DE FRANGO + BATATA RÚSTICA ASSADA + ARROZ', 19.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        FRICASSE DE FRANGO COM BATATA DOCE ASSADA <br><strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('FRICASSE DE FRANGO COM BATATA DOCE ASSADA', 19.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        FRANGO GRELHADO COM CREME DE MILHO + ARROZ COM BRÓCOLIS <br><strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('FRANGO GRELHADO COM CREME DE MILHO + ARROZ COM BRÓCOLIS', 19.90)">Adicionar</button>
       </div>
     </div>
+  </div>
 
-    <div class="categoria">
-      <h3>Opções com Carne <span style="font-weight:normal;">(R$ 18,99)</span></h3>
-      <div class="produtos-lista">
-        <div class="produto">
-          Bife de patinho + Purê Mandioquinha + Mix Legumes no vapor (couve flor + brócolis).
-          <button class="botao" onclick="addCarrinho('Bife de patinho + Purê Mandioquinha + Mix Legumes', 18.99)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Patinho Moído + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias)
-          <button class="botao" onclick="addCarrinho('Patinho Moído + Arroz Integral + Mix de Legumes', 18.99)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Almôndega Assada + Abóbora Japonesa no vapor + Mix de Legumes (Cenoura + Abobrinha Italiana)
-          <button class="botao" onclick="addCarrinho('Almôndega Assada + Abóbora Japonesa + Mix de Legumes', 18.99)">Adicionar</button>
-        </div>
+  <!-- Opções com Carne -->
+  <div class="categoria">
+    <h3 style="font-size:1.5em;">Opções com Carne</h3>
+    <div class="produtos-lista">
+      <!-- ITENS ANTIGOS -->
+      <div class="produto">
+        Bife de patinho + Purê Mandioquinha + Mix Legumes no vapor (couve flor + brócolis). <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Bife de patinho + Purê Mandioquinha + Mix Legumes', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Patinho Moído + Arroz Integral + Mix de Legumes (beringela refogada com tomate e especiarias) <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Patinho Moído + Arroz Integral + Mix de Legumes', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Almôndega Assada + Abóbora Japonesa no vapor + Mix de Legumes (Cenoura + Abobrinha Italiana) <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Almôndega Assada + Abóbora Japonesa + Mix de Legumes', 18.99)">Adicionar</button>
+      </div>
+      <!-- ITENS NOVOS -->
+      <div class="produto">
+        Carne Cozida Desfiada + Arroz (Integral ou Branco) + Feijão + Couve refogada <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Carne Cozida Desfiada + Arroz (Integral ou Branco) + Feijão + Couve refogada', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Carne de Panela + Arroz (Opção Integral) + Cenoura Cozida + Bròcolis <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Carne de Panela + Arroz (Opção Integral) + Cenoura Cozida + Bròcolis', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Patinho Moìdo + Macarrão + Bròcolis <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Patinho Moìdo + Macarrão + Bròcolis', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Escondidinho de Patinho Moído - Feito com purê de batata, queijo mussarela light, parmesão ralado e especiarias <br><strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('Escondidinho de Patinho Moído', 19.90)">Adicionar</button>
       </div>
     </div>
+  </div>
 
-    <div class="categoria">
-      <h3>Especiais <span style="font-weight:normal;">(a partir de R$ 18,99)</span></h3>
-      <div class="produtos-lista">
-        <div class="produto">
-          Filé de Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis). <strong>R$ 24,90</strong>
-          <button class="botao" onclick="addCarrinho('Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes', 24.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Filé de Tilápia ao molho de maracujá + Arroz Integral + Brócolis. <strong>R$ 24,90</strong>
-          <button class="botao" onclick="addCarrinho('Tilápia ao molho de maracujá + Arroz Integral + Brócolis', 24.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Escondidinho de Frango feito com Suflê de Abóbora. <strong>R$ 18,99</strong>
-          <button class="botao" onclick="addCarrinho('Escondidinho de Frango com Suflê de Abóbora', 18.99)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Panqueca Integral recheio Frango desfiado com ricota. <strong>R$ 19,90</strong>
-          <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com ricota', 19.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Panqueca Integral recheio de Escarola com Ricota <strong>R$ 19,90</strong>
-          <button class="botao" onclick="addCarrinho('Panqueca Integral de Escarola com Ricota', 19.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Panqueca Integral recheio Frango desfiado com requeijão light. <strong>R$ 19,90</strong>
-          <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com requeijão light', 19.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Berinjela Assada com molho bolonhesa + queijo light e orégano (Acompanha arroz Integral e Brócolis). <strong>R$ 24,90</strong>
-          <button class="botao" onclick="addCarrinho('Berinjela Assada à bolonhesa + arroz Integral e Brócolis', 24.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Polpetone de patinho assado recheado com queijo light ao molho sugo (Acompanha Arroz + Legumes) <strong>R$ 24,90</strong>
-          <button class="botao" onclick="addCarrinho('Polpetone de patinho + Arroz + Legumes', 24.90)">Adicionar</button>
-        </div>
-        <div class="produto">
-          Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes (Brócolis e Berinjela refogada). <strong>R$ 24,90</strong>
-          <button class="botao" onclick="addCarrinho('Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes', 24.90)">Adicionar</button>
-        </div>
+  <!-- Especiais -->
+  <div class="categoria">
+    <h3 style="font-size:1.5em;">Especiais</h3>
+    <div class="produtos-lista">
+      <!-- ITENS ANTIGOS -->
+      <div class="produto">
+        Filé de Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes no vapor (cenoura cozida + brócolis). <strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('Tilápia ao limão assado + Purê Mandioquinha + Mix Legumes', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Filé de Tilápia ao molho de maracujá + Arroz Integral + Brócolis. <strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('Tilápia ao molho de maracujá + Arroz Integral + Brócolis', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Escondidinho de Frango feito com Suflê de Abóbora. <strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Escondidinho de Frango com Suflê de Abóbora', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Panqueca Integral recheio Frango desfiado com ricota. <strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com ricota', 19.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Panqueca Integral recheio de Escarola com Ricota <strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('Panqueca Integral de Escarola com Ricota', 19.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Panqueca Integral recheio Frango desfiado com requeijão light. <strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('Panqueca Integral de Frango desfiado com requeijão light', 19.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Berinjela Assada com molho bolonhesa + queijo light e orégano (Acompanha arroz Integral e Brócolis). <strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('Berinjela Assada à bolonhesa + arroz Integral e Brócolis', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Polpetone de patinho assado recheado com queijo light ao molho sugo (Acompanha Arroz + Legumes) <strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('Polpetone de patinho + Arroz + Legumes', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes (Brócolis e Berinjela refogada). <strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('Lagarto assado ao molho madeira + Purê de mandioquinha + Mix de Legumes', 24.90)">Adicionar</button>
+      </div>
+      <!-- ITENS NOVOS -->
+      <div class="produto">
+        PANQUECA A BOLONHESA <br><strong>R$ 19,90</strong>
+        <button class="botao" onclick="addCarrinho('PANQUECA A BOLONHESA', 19.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        ARROZ COM BRÓCOLIS + FILET DE MERLUZA AO LIMÃO + SUFLÊ DE ABÓBORA <br><strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('ARROZ COM BRÓCOLIS + FILET DE MERLUZA AO LIMÃO + SUFLÊ DE ABÓBORA', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        FEIJOADA FIT (FEIJÃO PRETO, PATINHO EM CUBOS, CALABRESA, BACON) + ARROZ BRANCO + COUVE REFOGADA <br><strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('FEIJOADA FIT + ARROZ BRANCO + COUVE REFOGADA', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Cação ao Molho Pescador (tomate, cebola, cheiro verde e especiarias - Acompanha Arroz e Brócolis + Cenoura Cozida) <br><strong>R$ 24,90</strong>
+        <button class="botao" onclick="addCarrinho('Cação ao Molho Pescador + Arroz + Brócolis + Cenoura Cozida', 24.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Medalhão de Filet Migon Suino Assado + Batata Doce Assada + Cenoura cozida + Abobrinha italiana refogada <br><strong>R$ 18,99</strong>
+        <button class="botao" onclick="addCarrinho('Medalhão de Filet Migon Suino Assado + Batata Doce Assada + Cenoura cozida + Abobrinha italiana refogada', 18.99)">Adicionar</button>
+      </div>
+      <div class="produto">
+        Medalhão de Filet Mignon Suíno ao molho mostarda + Arroz + Brócolis + Cenoura cozida <br><strong>R$ 22,90</strong>
+        <button class="botao" onclick="addCarrinho('Medalhão de Filet Mignon Suíno ao molho mostarda + Arroz + Brócolis + Cenoura cozida', 22.90)">Adicionar</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Sobre a empresa -->
   <section id="sobre">
