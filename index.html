@@ -8,6 +8,71 @@
   <link rel="stylesheet" href="estilo.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #0F3D0F; /* verde escuro */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-links a:hover {
+  color: #C8FACC; /* verde claro no hover */
+}
+
+.cart-button {
+  background-color: white;
+  color: #0F3D0F;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.cart-button:hover {
+  background-color: #C8FACC;
+  color: #0F3D0F;
+}
+
+/* Para garantir que o conteúdo da página desça abaixo do menu */
+body {
+  padding-top: 80px;
+}
+
    .social-icons {
   margin: 24px 0 12px 0;
   text-align: center;
@@ -202,6 +267,19 @@
   </style>
 </head>
 <body>
+  <header class="navbar">
+  <div class="navbar-logo">
+    <a href="index.html">Salsa e Alecrim</a>
+  </div>
+  <nav class="navbar-links">
+    <a href="marmitas.html">Marmitas</a>
+    <a href="caldos.html">Caldos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="carrinho.html" class="cart-button">Carrinho 🛒</a>
+  </nav>
+</header>
+
   <!-- MENU FIXO NO TOPO -->
   <nav class="menu-topo">
     <ul>
